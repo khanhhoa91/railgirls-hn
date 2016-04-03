@@ -12,12 +12,13 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>
+  <%= image_tag(@idea.picture_url(:thumb)) if @idea.picture? %>
 </p>
 
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
   <div>
+    <%= image_tag(comment.picture_url, :width => 100) if comment.picture.present? %>
     <strong><%= comment.user_name %></strong>
     <br />
     <p><%= comment.body %></p>
