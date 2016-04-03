@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root :to => redirect('/ideas')
   resources :ideas
+  resource :user, only: [:edit, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
